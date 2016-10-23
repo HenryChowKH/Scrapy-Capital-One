@@ -1,12 +1,30 @@
 	<center>
-		<bR><bR><bR><bR><bR><bR>
+		<bR><bR><bR><bR><bR><bR><bR><bR><bR><bR>
 		<div class="well well-sm account">
 			{% if crawled_item == 'None' %}
-			<p class="Item" style="font-size: 40px;"> lolwut </p>
+				<p class="Item" style="font-size: 40px;"> Business as usual </p>
 			{% else %}
+
 			<p class="Item" style="font-size: 40px;">{{ crawled_item }}</p>
-			<p class="Item" style="font-size: 40px;">({{ price }})</p>
-			<p class="Item" style="font-size: 40px;">{{ percentage }}</p>
+
+			{% if color == 'purple' %}
+				<p class="Item" style="font-size: 40px;">Ayyyyyyy you can't afford that</p>
+			{% else %}
+				
+				<span class="Item" style="font-size: 40px;"> Current lowest online price: ${{ price }} (</span>
+
+				{% if color == 'green' %}
+					<span class="Item"style="font-size: 40px;color: green"> {{ percentage }}</span>
+				{% endif %}
+				{% if color == 'yellow' %}
+					<span class="Item"style="font-size: 40px;color: yellow"> {{ percentage }}</span>
+				{% endif %}
+				{% if color == 'red' %}
+					<span class="Item"style="font-size: 40px;color: red"> {{ percentage }}</span>
+				{% endif %}
+
+					<span class="Item" style="font-size: 40px;"> % of savings) </span>
+				{% endif %}
 			{% endif %}
 		</div>
 	</center>

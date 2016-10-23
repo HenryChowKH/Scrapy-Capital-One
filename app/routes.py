@@ -75,13 +75,23 @@ def crawl():
 	if price < 0:
 		return render_template("crawlResults.html", crawled_item='None')
 	else:
-		# Request API
+		# Request balance
 		url = "http://api.reimaginebanking.com/accounts/{}?key={}".format('580c020d360f81f104544e75', apiKey)
 		response = requests.get(url)
-		balance = response.balance
+		content = json.loads(response.text)
+		balance = content['balance']
 		# Calculate percentage
-		percentage = 100. * price / balance
-		return render_template("crawlResults.html", crawled_item=crawled_item, price=price, percentage=percentage)
+		percentage = 100. * price / float(balance)
+		if percentage <= 20:
+			color='green'
+		elif percentage <= 50:
+			color ='yellow'
+		elif percentage <= 80:
+			color = 'red'
+		else:
+			color = 'purple'
+		return render_template("crawlResults.html", crawled_item=crawled_item, price=price,\
+			percentage="%2.2f" % percentage, color=color)
 
 # Transfer post route.  Makes request to Nessie API to create a transfer.
 @app.route('/transfer', methods=['POST'])
