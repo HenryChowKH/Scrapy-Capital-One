@@ -1,0 +1,12 @@
+	<center>
+		<bR><bR><bR><bR><bR><bR>
+		<div class="well well-sm account">
+			{% if crawled_item == 'None' %}
+			<p class="Item" style="font-size: 40px;"> lolwut </p>
+			{% else %}
+			<p class="Item" style="font-size: 40px;">{{ crawled_item }}</p>
+			<p class="Item" style="font-size: 40px;">({{ price }})</p>
+			<p class="Item" style="font-size: 40px;">{{ percentage }}</p>
+			{% endif %}
+		</div>
+	</center>

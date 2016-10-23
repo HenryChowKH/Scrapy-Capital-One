@@ -1,0 +1,24 @@
+<html>	
+	<head>
+		<!-- Twitter Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Jquery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+		<!-- Custom JS -->
+		<script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
+
+		<title>Bananax</title>
+	</head>
+
+	<body style="padding: 20px;">
+		<div class="container-fluid">
+			<br><br><br><br><br><br><br><br><br><br><br>
+			<center> 
+				{% include 'crawlForm.html' %}
+			</center>
+			</div>
+    	</div>
+	</body>
+</html>

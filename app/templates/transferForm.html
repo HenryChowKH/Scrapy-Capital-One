@@ -1,0 +1,14 @@
+<div class="well well-sm">
+	
+	<form action="/transfer" method="POST">
+		<p>Amount: <span id="transferAmount"></span></p>
+		<input id="amount" type="text" name="amount" />
+		<br><br>
+
+		<!-- hidden fields populated by JS -->
+		<input id="toAccount" type="hidden" name="toAccount" />
+		<input id="fromAccount" type="hidden" name="fromAccount" />
+
+		<input type="submit" name="Go" value="Spawn Money"> <!-- class="btn btn-primary" -->
+	</form>
+</div>
